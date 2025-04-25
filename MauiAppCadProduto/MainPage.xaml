@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadProduto.MainPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+
+            <Label Text="Cadastro de Produtos" FontSize="24" HorizontalOptions="Center"/>
+
+            <Entry x:Name="nomeEntry" Placeholder="Nome do Produto"/>
+            <Entry x:Name="precoEntry" Placeholder="Preço" Keyboard="Numeric"/>
+            <Entry x:Name="descricaoEntry" Placeholder="Descrisão do Produto"/>
+            <Label  Text="Data de vencimento" TextColor="LightGrey" Margin="0"/>
+            <DatePicker x:Name="validadeDatePicker" Format="dd/MM/yyyy"/>
+            <Picker x:Name="categoriaPicker" Title="Selecione a Categoria">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Alimentos</x:String>
+                        <x:String>Bebidas</x:String>
+                        <x:String>Cosméticos</x:String>
+                        <x:String>Eletrônicos</x:String>
+                        <x:String>Roupas</x:String>
+                        <x:String>Higiene</x:String>
+                        <x:String>Outros</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Button Text="Adicionar Produto" Clicked="AdicionarProduto_Clicked"/>
+            <Button Text="Ver Lista de Produtos" Clicked="IrParaLista_Clicked"/>
+
+            <Label x:Name="mensagemLabel" FontSize="16" TextColor="Green" HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

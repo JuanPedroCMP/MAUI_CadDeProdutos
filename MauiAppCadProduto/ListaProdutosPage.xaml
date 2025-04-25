@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadProduto.ListaProdutosPage"
+             Title="ListaProdutosPage">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Lista de Produtos" FontSize="24" HorizontalOptions="Center"/>
+
+        <Picker x:Name="filtroPicker" Title="Selecione a Categoria" SelectedIndexChanged="filtroPicker_SelectedIndexChanged">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Todos</x:String>
+                    <x:String>Alimentos</x:String>
+                    <x:String>Bebidas</x:String>
+                    <x:String>Cosméticos</x:String>
+                    <x:String>Eletrônicos</x:String>
+                    <x:String>Roupas</x:String>
+                    <x:String>Higiene</x:String>
+                    <x:String>Outros</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <CollectionView x:Name="produtosCollectionView">
+            <CollectionView.Header>
+                <Grid Padding="5" ColumnDefinitions="*,*,*,*,2*" BackgroundColor="DimGray">
+                    <Label Text="Nome" Grid.Column="0" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
+                    <Label Text="Preço" Grid.Column="1" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
+                    <Label Text="Categoria" Grid.Column="2" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
+                    <Label Text="Data de Vencimento" Grid.Column="3" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
+                    <Label Text="Descrição" Grid.Column="4" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/> 
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate> 
+                <DataTemplate>
+                    <Grid Padding="5" ColumnDefinitions="*,*,*,*,2*" BackgroundColor="{Binding color}"> 
+                        <Label Text="{Binding Nome}" Grid.Column="0" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+                        <Label Text="{Binding PrecoFormatado}" Grid.Column="1" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+                        <Label Text="{Binding Categoria}" Grid.Column="2" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+                        <Label x:Name="lblDataVali" Text="{Binding DataVali}" Grid.Column="3" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+                        <Label Text="{Binding Descricao}" Grid.Column="4" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

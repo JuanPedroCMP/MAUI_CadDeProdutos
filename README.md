@@ -1,5 +1,5 @@
 # SOMauiAppCadProduto
-### PARTE 2 do projeto Cadastro de Produtos
+### PARTE 3 do projeto Cadastro de Produtos
 - ✅ Salvar e carregar os produtos (persistência local)
 - ✅ Remover Produto (com confirmação)
 - ✅ Exibir total de produtos e soma de valores

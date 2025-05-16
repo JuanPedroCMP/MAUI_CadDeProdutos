@@ -23,25 +23,30 @@
         </Picker>
         <CollectionView x:Name="produtosCollectionView">
             <CollectionView.Header>
-                <Grid Padding="5" ColumnDefinitions="*,*,*,*,2*" BackgroundColor="DimGray">
-                    <Label Text="Nome" Grid.Column="0" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
+                <Grid Padding="5" ColumnDefinitions="*,*,*,*,2*,*" BackgroundColor="DimGray">
+                    <Label Text="Produto" Grid.Column="0" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
                     <Label Text="Preço" Grid.Column="1" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
                     <Label Text="Categoria" Grid.Column="2" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
                     <Label Text="Data de Vencimento" Grid.Column="3" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
-                    <Label Text="Descrição" Grid.Column="4" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/> 
+                    <Label Text="Descrição" Grid.Column="4" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
+                    <Label Text="Ações" Grid.Column="5" FontAttributes="Bold" FontSize="16" HorizontalTextAlignment="Start" Margin="5,0" TextColor="Snow"/>
                 </Grid>
             </CollectionView.Header>
-            <CollectionView.ItemTemplate> 
-                <DataTemplate>
-                    <Grid Padding="5" ColumnDefinitions="*,*,*,*,2*" BackgroundColor="{Binding color}"> 
-                        <Label Text="{Binding Nome}" Grid.Column="0" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <Grid Padding="5" ColumnDefinitions="*,*,*,*,2*,*" BackgroundColor="{Binding color}" > 
+                        <Label Text="{Binding Nome}" Grid.Column="0" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0" />
+                        <Image Source="{Binding CaminhoImagem}" HeightRequest="100" WidthRequest="100" Grid.Column="0"/>
                         <Label Text="{Binding PrecoFormatado}" Grid.Column="1" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
                         <Label Text="{Binding Categoria}" Grid.Column="2" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
                         <Label x:Name="lblDataVali" Text="{Binding DataVali}" Grid.Column="3" FontSize="16" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
                         <Label Text="{Binding Descricao}" Grid.Column="4" HorizontalTextAlignment="Start" LineBreakMode="TailTruncation" Margin="5,0"/>
+                        <Button x:Name="BotaoRemover" Clicked="BotaoRemover_Clicked"  Grid.Column="5" BackgroundColor="Red" BorderColor="Black" BorderWidth="1" Text="Remover"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Label x:Name="resumoLabel" FontSize="16" FontAttributes="Bold" Margin="10,10"/>
+        <Label x:Name="alertaLabel" TextColor="Red" FontAttributes="Bold" Margin="10"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -1,4 +1,10 @@
 # SOMauiAppCadProduto
+### PARTE 2 do projeto Cadastro de Produtos
+- ✅ Salvar e carregar os produtos (persistência local)
+- ✅ Remover Produto (com confirmação)
+- ✅ Exibir total de produtos e soma de valores
+- ✅ Adicionar Imagem ao Produto
+- ✅ Alertar produtos vencidos ou próximos de vencer
 
 ### PARTE 2 do projeto Cadastro de Produtos
 - ✅ Filtrar produtos por categoria → Criar um filtro para exibir apenas produtos de uma categoria específica. 
